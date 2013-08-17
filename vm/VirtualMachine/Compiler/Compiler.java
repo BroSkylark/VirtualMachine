@@ -1,7 +1,5 @@
 package vm.VirtualMachine.Compiler;
 
-import vm.VirtualMachine.Assembler.Assembler;
-
 public class Compiler
 {
 	private String file, data;

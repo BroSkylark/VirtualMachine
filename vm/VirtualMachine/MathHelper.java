@@ -200,6 +200,5 @@ public class MathHelper
 									PLUS = Pattern.compile("([^!~]+)([\\+\\-]{1})(.+)"),
 									TIMES = Pattern.compile("([^!~]+)([\\*\\/]{1})(.+)"),
 									AOXN = Pattern.compile("([^!~]+?)([\\&\\|\\^<>]{1})(.+)"),
-									PAR = Pattern.compile("\\((.*)\\)"),
 									NUMBER = Pattern.compile("((?<![\\da-fA-F])(0[bodx]?[\\da-fA-F]+))");
 }

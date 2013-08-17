@@ -3,7 +3,6 @@ package vm.VirtualMachine.Assembler;
 import java.util.ArrayList;
 import java.util.List;
 
-import vm.VirtualMachine.Start;
 import vm.VirtualMachine.StringHelper;
 
 public class Preprocessor

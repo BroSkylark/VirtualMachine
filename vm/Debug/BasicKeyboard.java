@@ -2,7 +2,6 @@ package vm.Debug;
 
 import org.lwjgl.input.Keyboard;
 
-import vm.VirtualMachine.Start;
 import vm.VirtualMachine.CPU.Periphery;
 
 public class BasicKeyboard extends Periphery

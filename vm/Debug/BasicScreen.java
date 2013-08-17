@@ -15,7 +15,6 @@ import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
-import vm.VirtualMachine.Start;
 import vm.VirtualMachine.CPU.Periphery;
 
 public class BasicScreen extends Periphery
@@ -75,7 +74,7 @@ public class BasicScreen extends Periphery
 				}
 				break;
 			case 2:
-				
+				generateText(buffer.poll(), buffer.poll());
 				break;
 			case 3:
 				buffer.poll();
@@ -155,6 +154,7 @@ public class BasicScreen extends Periphery
 		return 0xffff;
 	}
 
+	@SuppressWarnings("unused")
 	private void writeChar(Graphics2D g, int x, int y, int c)
 	{
 		int s = 8;

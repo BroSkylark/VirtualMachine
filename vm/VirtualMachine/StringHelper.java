@@ -3,8 +3,6 @@ package vm.VirtualMachine;
 import java.util.ArrayList;
 import java.util.List;
 
-import vm.VirtualMachine.Assembler.Assembler;
-
 public class StringHelper
 {
 	public static String[] makePresentable(String s) { return makePresentable(s, "\n"); }

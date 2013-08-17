@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import vm.VirtualMachine.Start;
 import vm.VirtualMachine.StringHelper;
 
 public class MacroProcessor

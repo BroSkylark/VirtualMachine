@@ -139,6 +139,7 @@ public class ClassTree
 		private String name, parent;
 		private List<Method> methods;
 		private List<Field> fields;
+		@SuppressWarnings("unused")
 		private List<Class> children;
 		
 		public Class(String name)
@@ -226,6 +227,7 @@ public class ClassTree
 	{
 		private String name, type;
 		private AccessModifier access;
+		@SuppressWarnings("unused")
 		private boolean isPointer;
 		
 		public Field(String type, String name, AccessModifier access)

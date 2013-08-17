@@ -15,8 +15,10 @@ import vm.Debug.BasicScreen;
 import vm.Debug.Logger;
 import vm.VirtualMachine.Assembler.Assembler;
 import vm.VirtualMachine.Compiler.Compiler;
+import vm.VirtualMachine.CPU.CPU;
 import vm.VirtualMachine.CPU.IPrinter;
 
+@SuppressWarnings("unused")
 public class Start
 {
 	private static final int WIDTH = 256, HEIGHT = 256;
@@ -31,16 +33,17 @@ public class Start
 	
 	public static boolean test()
 	{
-		return false;
+		return true;
 	}
-	
 
 	public static void main(String argv[])
 	{
+		Logger.initializeLogger("resource/instructions.txt");
+		CPU.printInstructionList(Logger.instance);
 		Logger.initializeLogger("resource/log.log");
 		DEBUG = true;
 		
-		if(test()) return;
+//		if(test()) return;
 
 		Test t = new Test();
 		BasicScreen screen = new BasicScreen(WIDTH, HEIGHT);
@@ -74,16 +77,18 @@ public class Start
 			Logger.initializeLogger("resource/log.log");
 			
 			t.printMemory(printer, 0, 0x100);
+			t.printState(printer);
 			
 			while(!Display.isCloseRequested())
 			{
-				if(!t.isStopped())
+				if(!t.isHalted())
 				{
 					for(int i = 0 ; i < 16 ; i++)
 					{
-						t.execute();
+						t.execute(printer);
+						t.printState(printer);
 						
-						if(t.isFlushing()) break;
+						if(t.isFlushing() || t.isHalted()) break;
 					}
 				}
 				else
@@ -140,7 +145,6 @@ public class Start
 		}
 
 		t.printMemory(printer, 0, 0x100);
-		
 		t.printState(printer);
 		
 		Logger.instance.flush();
