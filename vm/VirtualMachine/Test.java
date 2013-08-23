@@ -53,7 +53,7 @@ public class Test extends CPU
 			
 			for(int i = 0 ; i < r.length ; i++)
 			{
-				r[i] = result[i << 1] | (result[(i << 1) | 1] << 8);
+				r[i] = (int)(result[i << 1] & 0xff) | ((int)(result[(i << 1) | 1] & 0xff) << 8);
 			}
 			
 			return r;
